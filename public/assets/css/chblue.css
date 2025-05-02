@@ -36,13 +36,13 @@ p.lead .line,
 .filter-header,
 .profilebackground,
 .filter-header input[type="button"]{
-	background: #0a3d62 !important; 
-	background-color: #0a3d62 !important; 
+	background: #0a3d62 !important;
+	background-color: #0a3d62 !important;
 }
 .opacy_bg_03,
 .item-team-01 .info-team,
 .header-detailed{
-	background: #0a3d62;  
+	background: #0a3d62;
 	background: rgba(136, 196, 37, 0.6);
 }
 
@@ -129,13 +129,13 @@ address a{
 }
 
 hr.separator::before {
-	background: #0a3d62;	
+	background: #0a3d62;
 }
 #footer .fa{
 	color:#fff;
 }
-.footer-m {	
-	border-top: 2px solid #0a3d62;	
+.footer-m {
+	border-top: 2px solid #0a3d62;
 }
 
 .footer-m ul li a .fa {
@@ -155,7 +155,7 @@ hr.separator::before {
 	background-color: #05f9f9 !important;
 }
 .header-v3 {
-	z-index: 9999;	
+	z-index: 9999;
 }
 .error{
 	color:#f20e0e !important;
@@ -168,6 +168,6 @@ hr.separator::before {
 #sponsors{
 	z-index: 101;
 }
-.#owl-wrapper{
+#owl-wrapper{
 	z-index: 100;
 }
