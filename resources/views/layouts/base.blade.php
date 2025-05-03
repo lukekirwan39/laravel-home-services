@@ -123,8 +123,39 @@
                         <li><a href="servicesbycategory/18.html">Home Automation</a></li>
                     </ul>
                 </li>
-                <li class="login-form"> <a href="index.php/register.html" title="Register">Register</a></li>
-                <li class="login-form"> <a href="login.html" title="Login">Login</a></li>
+                @if(Route::has('login'))
+                    @auth
+                        @if(Auth::user()->utype()==='ADM')
+                            <li class="login-form"> <a href="#" title="Register">My Account (ADMIN)</a>
+                                <ul class="drop-down one-column hover-fade">
+                                    <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
+                                    <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                                </ul>
+                            </li>
+                        @elseif (Auth::user()->utype()==='SVP')
+                            <li class="login-form"> <a href="#" title="Register">My Account (s provider)</a>
+                                <ul class="drop-down one-column hover-fade">
+                                    <li><a href="{{route('sprovider.dashboard')}}">Dashboard</a></li>
+                                    <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                                </ul>
+                            </li>
+                        @else
+                            <li class="login-form"> <a href="#" title="Register">My Account (Customer)</a>
+                                <ul class="drop-down one-column hover-fade">
+                                    <li><a href="{{route('customer.dashboard')}}">Dashboard</a></li>
+                                    <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                                </ul>
+                            </li>
+                        @endif
+                        <form id ="logout-form" method="POST" action="{{ route('logout') }}" style="display: none">
+                            @csrf
+                        </form>
+                    @else
+                        <li class="login-form"> <a href="{{route('register')}}" title="Register">Register</a></li>
+                        <li class="login-form"> <a href="{{route('login')}}" title="Login">Login</a></li>
+
+                    @endif
+                @endif
                 <li class="search-bar">
                 </li>
             </ul>
