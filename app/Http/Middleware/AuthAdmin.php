@@ -9,20 +9,13 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthAdmin
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::user()->utype !== 'ADM') {
-            return $next($request);
-        }
-        else {
-            session()->flush();
-            return redirect()->route('login');
+        if (Auth::check() && Auth::user()->utype === 'ADM') {
+            return $next($request); // ✅ Allow access only if ADM
         }
 
+        session()->flush();
+        return redirect()->route('login');
     }
 }

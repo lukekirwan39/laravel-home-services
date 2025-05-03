@@ -9,19 +9,13 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthSprovider
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::user()->utype !== 'SVP ') {
-            return $next($request);
+        if (Auth::check() && Auth::user()->utype === 'SVP') { // ✅ Remove space
+            return $next($request); // ✅ Allow only service providers
         }
-        else {
-            session()->flush();
-            return redirect()->route('login');
-        }
+
+        session()->flush();
+        return redirect()->route('login');
     }
 }
