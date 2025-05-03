@@ -125,14 +125,14 @@
                 </li>
                 @if(Route::has('login'))
                     @auth
-                        @if(Auth::user()->utype()==='ADM')
+                        @if(Auth::user()->utype==='ADM')
                             <li class="login-form"> <a href="#" title="Register">My Account (ADMIN)</a>
                                 <ul class="drop-down one-column hover-fade">
                                     <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
                                     <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                 </ul>
                             </li>
-                        @elseif (Auth::user()->utype()==='SVP')
+                        @elseif (Auth::user()->utype==='SVP')
                             <li class="login-form"> <a href="#" title="Register">My Account (s provider)</a>
                                 <ul class="drop-down one-column hover-fade">
                                     <li><a href="{{route('sprovider.dashboard')}}">Dashboard</a></li>

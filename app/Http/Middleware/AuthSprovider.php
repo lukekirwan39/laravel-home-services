@@ -20,7 +20,7 @@ class AuthSprovider
             return $next($request);
         }
         else {
-            session()->flash();
+            session()->flush();
             return redirect()->route('login');
         }
     }
