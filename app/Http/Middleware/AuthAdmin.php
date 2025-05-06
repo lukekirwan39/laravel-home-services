@@ -11,11 +11,12 @@ class AuthAdmin
 {
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check() && Auth::user()->utype === 'ADM') {
+        if (Auth::user()->utype === 'ADM') {
             return $next($request); // ✅ Allow access only if ADM
         }
-
-        session()->flush();
-        return redirect()->route('login');
+        else {
+            session()->flush();
+            return redirect()->route('login');
+        }
     }
 }

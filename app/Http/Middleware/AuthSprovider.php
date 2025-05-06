@@ -11,11 +11,12 @@ class AuthSprovider
 {
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check() && Auth::user()->utype === 'SVP') { // ✅ Remove space
-            return $next($request); // ✅ Allow only service providers
+        if (Auth::user()->utype === 'SVP') {
+            return $next($request); // ✅ Allow access only if SVP
         }
-
-        session()->flush();
-        return redirect()->route('login');
+        else {
+            session()->flush();
+            return redirect()->route('login');
+        }
     }
 }

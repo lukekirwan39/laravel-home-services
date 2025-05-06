@@ -35,7 +35,6 @@ class CreateNewUser implements CreatesNewUsers
             'password' => Hash::make($input['password']),
             'phone' => $input['phone'],
             'utype' => $registeras,
-            'role' => $registeras === 'SVP' ? 'sprovider' : 'customer',
         ]);
     }
 }
