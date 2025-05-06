@@ -49,7 +49,6 @@
                                 </tbody>
                             </table>
 
-                            <!-- Add pagination links here -->
                             {{ $scategories->links() }}
                         </div>
                     </div>
