@@ -9,4 +9,5 @@ use Livewire\WithPagination;
 class ServiceCategory extends Model
 {
     use HasFactory,WithPagination;
+    protected $fillable = ['name', 'slug', 'image'];
 }
