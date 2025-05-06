@@ -18,8 +18,9 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $this->call([
-            ServiceCategorySeeder::class
-        ]);
+//        $this->call([
+//            ServiceCategorySeeder::class
+//        ]);
+        \App\Models\Service::factory(20)->create();
     }
 }

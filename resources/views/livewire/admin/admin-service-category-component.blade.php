@@ -35,20 +35,20 @@
                                     <th>Image</th>
                                     <th>Name</th>
                                     <th>Slug</th>
-
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($scategories as $scategories)
+                                @foreach($scategories as $scategory)
                                     <tr>
-                                        <td>{{$scategories->id}}</td>
-                                        <td><img src="{{asset('images/categories')}}/{{$scategories->image}}"width="60"/> </td>
-                                        <td>{{$scategories->name}}</td>
-                                        <td>{{$scategories->slug}}</td>
+                                        <td>{{ $scategory->id }}</td>
+                                        <td><img src="{{ asset('images/categories/'.$scategory->image) }}" width="60" /></td>
+                                        <td>{{ $scategory->name }}</td>
+                                        <td>{{ $scategory->slug }}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
+
                             {{ $scategories->links() }}
                         </div>
                     </div>
