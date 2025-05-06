@@ -132,6 +132,7 @@
                             <li class="login-form"> <a href="#" title="Register">My Account (ADMIN)</a>
                                 <ul class="drop-down one-column hover-fade">
                                     <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
+                                    <li><a href="{{route('admin.service_categories')}}">Service Categories</a></li>
                                     <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                 </ul>
                             </li>
