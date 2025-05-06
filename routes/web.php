@@ -8,6 +8,7 @@ use App\Http\Livewire\Sprovider\SproviderDashboardComponent;
 use App\Livewire\Admin\AdminAddServiceCategoryComponent;
 use App\Livewire\Admin\AdminDashboardComponent;
 use App\Livewire\Admin\AdminServiceCategoryComponent;
+use App\Livewire\ServicesDetailsComponent;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomeComponent::class)->name('home');
 Route::get('service-categories', ServiceCategoriesComponent::class)->name('home.service-categories');
 Route::get('/{category_slug}/services', ServicesByCategoryComponent::class)->name('home.services_by_category');
+Route::get('/service/{service_slug}',ServicesDetailsComponent::class)->name('home.service_details');
 
 // Customer dashboard
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
