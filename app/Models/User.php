@@ -27,9 +27,6 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'phone',
-        'utype',
-        'role',  // Add this line to include the role attribute
     ];
 
     /**
@@ -61,9 +58,4 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-
-    public function getUtypeAttribute()
-    {
-        return $this->role;  // Assuming you have a 'role' column in the 'users' table
-    }
 }
