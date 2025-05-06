@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Livewire\Admin;
+namespace App\Livewire\Admin;
 
 use App\Models\ServiceCategory;
-use Livewire\Component;
-use Illuminate\Support\Str;
-use Livewire\WithFileUploads;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
+use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class AdminAddServiceCategoryComponent extends Component
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Livewire\Admin;
+namespace App\Livewire\Admin;
 
+use App\Models\ServiceCategory;
 use Livewire\Component;
 use Livewire\WithPagination;
-use App\Models\ServiceCategory;
 
 class AdminServiceCategoryComponent extends Component
 {
@@ -12,6 +12,6 @@ class AdminServiceCategoryComponent extends Component
     public function render()
     {
         $scategories = ServiceCategory::paginate(10);
-        return view('livewire.admin.admin-service-category-component', ['scategories' => $scategories])->layout('layouts.base');
+        return view('livewire.admin.admin-service-category-component',['scategories'=>$scategories])->layout('layouts.base');
     }
 }

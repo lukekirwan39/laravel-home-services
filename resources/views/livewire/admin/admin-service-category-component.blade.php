@@ -53,7 +53,7 @@
                                     @foreach($scategories as $scategory)
                                         <tr>
                                             <td>{{ $scategory->id }}</td>
-                                            <td><img src="{{ asset('images/categories/'.$scategory->image) }}" width="60" /></td>
+                                            <td><img src="{{ asset('images/categories')}}/{{$scategory->image}}" width="60" /></td>
                                             <td>{{ $scategory->name }}</td>
                                             <td>{{ $scategory->slug }}</td>
                                         </tr>
