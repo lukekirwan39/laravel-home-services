@@ -9,6 +9,7 @@ use App\Livewire\Admin\AdminAddServiceCategoryComponent;
 use App\Livewire\Admin\AdminDashboardComponent;
 use App\Livewire\Admin\AdminEditServiceCategoryComponent;
 use App\Livewire\Admin\AdminServiceCategoryComponent;
+use App\Livewire\Admin\AdminServicesByCategoryComponent;
 use App\Livewire\ServicesDetailsComponent;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -36,6 +37,7 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () 
     Route::get('/admin/service-categories', AdminServiceCategoryComponent::class)->name('admin.service_categories');
     Route::get('/admin/service-category/add', AdminAddServiceCategoryComponent::class)->name('admin.add_service_category');
     Route::get('/admin/service-category/edit/{category_id}',AdminEditServiceCategoryComponent::class)->name('admin.edit_service_category');
+    Route::get('/admin/{category_slug}/services', AdminServicesByCategoryComponent::class)->name('admin.services_by_category');
 });
 
 // Redirect /dashboard based on user type
