@@ -61,9 +61,7 @@
                                     </tbody>
                                 </table>
 
-                                <!-- Add pagination links here -->
-                                {{ $scategories->links() }}
-                            </div>
+                            {{ $scategories->links() }}
                         </div>
                     </div>
                 </div>
