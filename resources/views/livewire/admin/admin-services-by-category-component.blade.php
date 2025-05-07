@@ -51,7 +51,7 @@
                                             <th>#</th>
                                             <th>Image</th>
                                             <th>Name</th>
-                                            <th>price</th>
+                                            <th>Price</th>
                                             <th>Status</th>
                                             <th>Category</th>
                                             <th>Created At </th>

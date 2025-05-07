@@ -42,22 +42,25 @@
                                     @endif
                                     <form class="form-horizontal" wire:submit.prevent="updateServiceCategory">
                                         @csrf
+
                                         <div class="form-group">
-                                            <label for="name" class="control-label col-sm-3">Category name</label>
+                                            <label for="name" class="control-label col-sm-3">Category Name: </label>
                                             <div class="col-sm-9">
                                                 <input type="text" class="form-control" name="name" wire:model="name" wire:keyup="generateSlug"/>
                                                 @error('name') <p class="text-danger">{{$message}}</p> @enderror
                                             </div>
                                         </div>
+
                                         <div class="form-group">
-                                            <label for="slug" class="control-label col-sm-3">Category Slug</label>
+                                            <label for="slug" class="control-label col-sm-3">Category Slug: </label>
                                             <div class="col-sm-9">
                                                 <input type="text" class="form-control" name="slug" wire:model="slug"/>
                                                 @error('slug') <p class="text-danger">{{$message}}</p> @enderror
                                             </div>
                                         </div>
+
                                         <div class="form-group">
-                                            <label for="image" class="control-label col-sm-3">Category Image</label>
+                                            <label for="image" class="control-label col-sm-3">Category Image: </label>
                                             <div class="col-sm-9">
                                                 <input type="file" class="form-control-file" name="image" wire:model="newimage"/>
                                                 @error('newimage') <p class="text-danger">{{$message}}</p> @enderror
@@ -69,6 +72,17 @@
                                                 @endif
                                             </div>
                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="featured" class="control-label col-sm-3">Featured: </label>
+                                            <div class="col-sm-9">
+                                                <select class="form-control" name="featured" wire:model="featured">
+                                                    <option value="0">No</option>
+                                                    <option value="1">Yes</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
                                         <button type="submit" class="btn btn-success pull-right">Update Category</button>
                                     </form>
 
