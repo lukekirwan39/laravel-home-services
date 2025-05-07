@@ -134,6 +134,7 @@
                                     <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
                                     <li><a href="{{route('admin.service_categories')}}">Service Categories</a></li>
                                     <li><a href="{{route('admin.all_services')}}">All Service </a></li>
+                                    <li><a href="{{route('admin.slider')}}">Manage Slides </a></li>
                                     <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                 </ul>
                             </li>
