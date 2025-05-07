@@ -63,6 +63,7 @@
                                             <td>{{ $scategory->name }}</td>
                                             <td>{{ $scategory->slug }}</td>
                                             <td>
+                                                <a href="{{route('admin.services_by_category',['category_slug' => $scategory->slug])}}" style="margin-right:10px; "><i class="fa fa-list fa-2x text-info"></i></a>
                                                 <a href="{{route('admin.edit_service_category',['category_id' => $scategory->id])}}" style="margin-left:10px; "><i class="fa fa-edit fa-2x text-info"></i></a>
                                                 <a href="#" onclick="confirm('Are you  sure, you want  to delete this service category!') || event.stopImmediatePropagation()" wire:click.prevent="deleteServiceCategory({{$scategory->id}})"><i class="fa fa-times fa-2x text-danger"></i></a>
                                             </td>
