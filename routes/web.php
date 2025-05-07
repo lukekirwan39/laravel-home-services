@@ -14,6 +14,7 @@ use App\Livewire\Admin\AdminEditServiceCategoryComponent;
 use App\Livewire\Admin\AdminEditServiceComponent;
 use App\Livewire\Admin\AdminEditSlideComponent;
 use App\Livewire\Admin\AdminServiceCategoryComponent;
+use App\Livewire\Admin\AdminServiceProviderComponent;
 use App\Livewire\Admin\AdminServicesByCategoryComponent;
 use App\Livewire\Admin\AdminServicesComponent;
 use App\Livewire\Admin\AdminSliderComponent;
@@ -68,6 +69,9 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () 
     Route::get('/admin/slider/add', AdminAddSlideComponent::class)->name('admin.add_slide');
     Route::get('/admin/slider/edit/{slide_id}', AdminEditSlideComponent::class)->name('admin.edit_slide');
     Route::get('/admin/contacts',\App\Livewire\Admin\AdminContactComponent::class)->name('admin.contacts');
+
+
+    Route::get('admin/service-providers',AdminServiceProviderComponent::class)->name('admin.service_providers');
 });
 
 // Redirect /dashboard based on user type
