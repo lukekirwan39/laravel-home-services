@@ -34,6 +34,7 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () 
     Route::get('/admin/service-categories', AdminServiceCategoryComponent::class)->name('admin.service_categories');
     Route::get('/admin/service-category/add', AdminAddServiceCategoryComponent::class)->name('admin.add_service_category');
     Route::get('/admin/service-category/edit/{category_id}',AdminEditServiceCategoryComponent::class)->name('admin.edit_service_category');
+    Route::get('/admin/all-service',\App\Livewire\Admin\AdminServicesComponent::class)->name('admin.all_services');
 });
 
 // Redirect /dashboard based on user type
