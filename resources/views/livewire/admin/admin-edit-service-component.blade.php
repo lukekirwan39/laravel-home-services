@@ -43,28 +43,28 @@
                                     <form class="form-horizontal" wire:submit.prevent="updateService">
                                         @csrf
                                         <div class="form-group">
-                                            <label for="name" class="control-label col-sm-3"> name</label>
+                                            <label for="name" class="control-label col-sm-3">Name: </label>
                                             <div class="col-sm-9">
                                                 <input type="text" class="form-control" name="name" wire:model="name" wire:keyup="generateSlug"/>
                                                 @error('name') <p class="text-danger">{{$message}}</p> @enderror
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="slug" class="control-label col-sm-3"> Slug</label>
+                                            <label for="slug" class="control-label col-sm-3">Slug: </label>
                                             <div class="col-sm-9">
                                                 <input type="text" class="form-control" name="slug" wire:model="slug"/>
                                                 @error('slug') <p class="text-danger">{{$message}}</p> @enderror
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="slug" class="control-label col-sm-3"> Tagline</label>
+                                            <label for="slug" class="control-label col-sm-3">Tagline: </label>
                                             <div class="col-sm-9">
                                                 <input type="text" class="form-control" name="slug" wire:model="tagline"/>
                                                 @error('tagline') <p class="text-danger">{{$message}}</p> @enderror
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="slug" class="control-label col-sm-3"> Service Category</label>
+                                            <label for="slug" class="control-label col-sm-3">Service Category: </label>
                                             <div class="col-sm-9">
                                                 <select class="form-control" wire:model="service_category_id">
                                                     @foreach($categories as $category)
@@ -75,14 +75,14 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="slug" class="control-label col-sm-3"> Price</label>
+                                            <label for="slug" class="control-label col-sm-3">Price: </label>
                                             <div class="col-sm-9">
                                                 <input type="text" class="form-control" name="price" wire:model="price"/>
                                                 @error('price') <p class="text-danger">{{$message}}</p> @enderror
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="slug" class="control-label col-sm-3"> Discount</label>
+                                            <label for="slug" class="control-label col-sm-3">Discount: </label>
                                             <div class="col-sm-9">
                                                 <input type="text" class="form-control" name="discount" wire:model="discount"/>
                                                 @error('discount') <p class="text-danger">{{$message}}</p> @enderror
@@ -90,7 +90,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="slug" class="control-label col-sm-3"> Discount Type </label>
+                                            <label for="slug" class="control-label col-sm-3">Discount Type: </label>
                                             <div class="col-sm-9">
                                                 <select class="form-control" wire:model="discount_type">
                                                     <option value="">Select Discount Type</option>
@@ -100,29 +100,40 @@
                                                 @error('discount_type') <p class="text-danger">{{$message}}</p> @enderror
                                             </div>
                                         </div>
+
                                         <div class="form-group">
-                                            <label for="slug" class="control-label col-sm-3"> Description</label>
+                                            <label for="slug" class="control-label col-sm-3">Featured: </label>
+                                            <div class="col-sm-9">
+                                                <select class="form-control" wire:model="featured">
+                                                    <option value="0">No</option>
+                                                    <option value="1">Yes</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="slug" class="control-label col-sm-3">Description: </label>
                                             <div class="col-sm-9">
                                                 <textarea class="form-control" wire:model="description"></textarea>
                                                 @error('description') <p class="text-danger">{{$message}}</p> @enderror
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="slug" class="control-label col-sm-3"> Inclusion</label>
+                                            <label for="slug" class="control-label col-sm-3">Inclusion: </label>
                                             <div class="col-sm-9">
                                                 <textarea class="form-control" wire:model="inclusion"></textarea>
                                                 @error('inclusion') <p class="text-danger">{{$message}}</p> @enderror
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="slug" class="control-label col-sm-3"> Exclusion</label>
+                                            <label for="slug" class="control-label col-sm-3">Exclusion: </label>
                                             <div class="col-sm-9">
                                                 <textarea class="form-control" wire:model="exclusion"></textarea>
                                                 @error('exclusion') <p class="text-danger">{{$message}}</p> @enderror
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="image" class="control-label col-sm-3"> Thumbnail</label>
+                                            <label for="image" class="control-label col-sm-3">Thumbnail: </label>
                                             <div class="col-sm-9">
                                                 <input type="file" class="form-control-file" name="thumbnail" wire:model="newthumbnail"/>
                                                 @error('newthumbnail') <p class="text-danger">{{$message}}</p> @enderror
@@ -135,7 +146,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="image" class="control-label col-sm-3"> Image</label>
+                                            <label for="image" class="control-label col-sm-3">Image: </label>
                                             <div class="col-sm-9">
                                                 <input type="file" class="form-control-file" name="image" wire:model="newimage"/>
                                                 @error('newimage') <p class="text-danger">{{$message}}</p> @enderror
