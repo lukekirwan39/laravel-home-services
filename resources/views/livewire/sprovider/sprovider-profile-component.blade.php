@@ -57,6 +57,7 @@
 
                                                     </p>
                                             <p><b>Service Locations : </b>{{$sprovider->service_loactions}}</p>
+                                            <a href="{{route('sprovider.edit_profile')}}" class="btn btn-primary pull-right">Edit Profile</a>
 
                                         </div>
 

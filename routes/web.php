@@ -19,6 +19,7 @@ use App\Livewire\Admin\AdminServicesComponent;
 use App\Livewire\Admin\AdminSliderComponent;
 use App\Livewire\ChangeLocationComponent;
 use App\Livewire\ServicesDetailsComponent;
+use App\Livewire\Sprovider\EditSproviderProfileComponent;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
@@ -48,6 +49,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 Route::middleware(['auth:sanctum', 'verified', 'authsprovider'])->group(function () {
     Route::get('/sprovider/dashboard', SproviderDashboardComponent::class)->name('sprovider.dashboard');
     Route::get('/sprovider/profile', \App\Livewire\Sprovider\SproviderProfileComponent::class)->name('sprovider.profile');
+    Route::get('/sprovider/profile/edit',EditSproviderProfileComponent::class)->name('sprovider.edit_profile');
 });
 
 // Admin dashboard
