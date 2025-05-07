@@ -47,6 +47,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 // Service provider dashboard
 Route::middleware(['auth:sanctum', 'verified', 'authsprovider'])->group(function () {
     Route::get('/sprovider/dashboard', SproviderDashboardComponent::class)->name('sprovider.dashboard');
+    Route::get('/sprovider/profile', \App\Livewire\Sprovider\SproviderProfileComponent::class)->name('sprovider.profile');
 });
 
 // Admin dashboard
