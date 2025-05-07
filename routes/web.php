@@ -38,6 +38,7 @@ Route::post('/search', [SearchController::class, 'searchService'])->name('search
 
 
 Route::get('/change-location',ChangeLocationComponent::class)->name('home.change_location');
+Route::get('/contact-us',\App\Livewire\ContactComponent::class)->name('home.contact');
 
 
 // Customer dashboard
@@ -66,6 +67,7 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () 
     Route::get('/admin/slider', AdminSliderComponent::class)->name('admin.slider');
     Route::get('/admin/slider/add', AdminAddSlideComponent::class)->name('admin.add_slide');
     Route::get('/admin/slider/edit/{slide_id}', AdminEditSlideComponent::class)->name('admin.edit_slide');
+    Route::get('/admin/contacts',\App\Livewire\Admin\AdminContactComponent::class)->name('admin.contacts');
 });
 
 // Redirect /dashboard based on user type
