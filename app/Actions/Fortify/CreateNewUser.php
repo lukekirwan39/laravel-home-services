@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Jetstream\Jetstream;
+use App\Models\Customer;
+
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -44,6 +46,11 @@ class CreateNewUser implements CreatesNewUsers
             ServiceProvider::create([
                 'user_id' => $user->id,
 
+            ]);
+        }
+        else{
+            Customer::create([
+                'user_id' => $user->id,
             ]);
         }
 
