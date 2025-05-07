@@ -75,9 +75,9 @@
                                                 </td>
                                                 <td>
                                                     @if($service->featured)
-                                                        Yes
+                                                        <span class="text-success">Yes</span>
                                                     @else
-                                                        No
+                                                        <span class="text-danger">No</span>
                                                     @endif
                                                 </td>
                                                 <td>{{ $service->category->name }}</td>
