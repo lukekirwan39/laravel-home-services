@@ -10,12 +10,6 @@
                          data-bgfitend="100" data-bgpositionend="right center">
                 </li>
                 @endforeach
-                <li data-transition="slidehorizontal" data-slotamount="1" data-masterspeed="1000"
-                    data-saveperformance="off" data-title="Slide">
-                    <img src="{{asset('assets/img/slide/2.jpg')}}" alt="fullslide1" data-bgposition="top center"
-                         data-kenburns="on" data-duration="6000" data-ease="Linear.easeNone" data-bgfit="130"
-                         data-bgfitend="100" data-bgpositionend="right center">
-                </li>
             </ul>
             <div class="tp-bannertimer"></div>
         </div>
