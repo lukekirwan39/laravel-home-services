@@ -24,6 +24,9 @@ use App\Livewire\Sprovider\EditSproviderProfileComponent;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Customer\CustomerProfileComponent;
+use App\Livewire\Customer\EditCustomerProfileComponent;
+
 
 // Home page
 Route::get('/', HomeComponent::class)->name('home');
@@ -45,6 +48,12 @@ Route::get('/contact-us',\App\Livewire\ContactComponent::class)->name('home.cont
 // Customer dashboard
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/customer/dashboard', CustomerDashboardComponent::class)->name('customer.dashboard');
+    // Add this route for customer profile
+
+    Route::get('/customer/profile', CustomerProfileComponent::class)->name('customer.profile');
+    Route::get('/customer/profile/edit', EditCustomerProfileComponent::class)->name('customer.edit_profile');
+
+
 });
 
 // Service provider dashboard

@@ -1,9 +1,10 @@
+<!-- resources/views/livewire/customer/customer-profile-component.blade.php -->
 <div>
     <div class="section-title-01 honmob">
         <div class="bg_parallax image_02_parallax"></div>
         <div class="opacy_bg_02">
             <div class="container">
-                <h1>Profile</h1>
+                <h1>Customer Profile</h1>
                 <div class="crumbs">
                     <ul>
                         <li><a href="/">Home</a></li>
@@ -14,6 +15,7 @@
             </div>
         </div>
     </div>
+
     <section class="content-central">
         <div class="content_info">
             <div class="paddings-mini">
@@ -26,35 +28,27 @@
                                         <div class="col-md-6">
                                             Profile
                                         </div>
-                                        <div class="col-md-6">
-
-                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            @if($sprovider && $sprovider->image)
-                                                <img src="{{ asset('images/sproviders') }}/{{$sprovider->image}}" width="100%">
+                                            <!-- Display customer image -->
+                                            @if($customer && $customer->image)
+                                                <img src="{{ asset('images/customers') }}/{{$customer->image}}" width="100%">
                                             @else
-                                                <img src="{{ asset('images/sproviders/default.png') }}" width="100%">
+                                                <img src="{{ asset('images/customers/default.png') }}" width="100%">
                                             @endif
                                         </div>
                                         <div class="col-md-8">
-                                            <h3>Name: {{Auth::user()->name}}</h3>
-                                            <p>{{$sprovider->about ?? 'No information available.'}}</p>
-                                            <p><b>Email : </b>{{Auth::user()->email}}</p>
-                                            <p><b>Phone : </b>{{Auth::user()->phone}}</p>
-                                            <p><b>City :</b> {{$sprovider->city ?? 'No city specified'}}</p>
-                                            <p><b>Service Category :</b>
-                                                @if($sprovider && $sprovider->service_category_id)
-                                                    {{$sprovider->category->name ?? 'No category assigned'}}
-                                                @else
-                                                    'No category assigned'
-                                                @endif
-                                            </p>
-                                            <p><b>Service Locations : </b>{{$sprovider->service_locations ?? 'No locations provided'}}</p>
-                                            <a href="{{route('sprovider.edit_profile')}}" class="btn btn-primary pull-right">Edit Profile</a>
+                                            <h3>Name: {{ Auth::user()->name }}</h3>
+                                            <p>{{ $customer->bio ?? 'No information available.' }}</p>
+                                            <p><b>Email: </b>{{ Auth::user()->email }}</p>
+                                            <p><b>Phone: </b>{{ Auth::user()->phone }}</p>
+                                            <p><b>City: </b>{{ $customer->city ?? 'No city specified' }}</p>
+                                            <a href="{{ route('customer.edit_profile') }}" class="btn btn-primary pull-right">Edit Profile</a>
+
                                         </div>
                                     </div>
                                 </div>

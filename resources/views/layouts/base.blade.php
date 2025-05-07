@@ -30,9 +30,9 @@
             <div class="row">
                 <div class="col-md-6">
                     <ul class="visible-md visible-lg text-left">
-                        <li><a href="tel:+911234567890"><i class="fa fa-phone"></i> +91-1234567890</a></li>
-                        <li><a href="mailto:contact@surfsidemedia.in"><i class="fa fa-envelope"></i>
-                                contact@surfsidemedia.in</a></li>
+                        <li><a href="{{route('home.contact')}}"><i class="fa fa-phone"></i> +91-1234567890</a></li>
+                        <li><a href="{{route('home.contact')}}"><i class="fa fa-envelope"></i>
+                                contact@contact.in</a></li>
                     </ul>
                     <ul class="visible-xs visible-sm">
                         <li class="text-left"><a href="tel:+911234567890"><i class="fa fa-phone"></i>
@@ -146,6 +146,7 @@
                             <li class="login-form"> <a href="#" title="Register">My Account (Customer)</a>
                                 <ul class="drop-down one-column hover-fade">
                                     <li><a href="{{route('customer.dashboard')}}">Dashboard</a></li>
+                                    <li><a href="{{route('customer.profile')}}">Profile</a></li>
                                     <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                 </ul>
                             </li>
