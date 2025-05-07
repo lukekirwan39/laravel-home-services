@@ -17,6 +17,7 @@ use App\Livewire\Admin\AdminServiceCategoryComponent;
 use App\Livewire\Admin\AdminServicesByCategoryComponent;
 use App\Livewire\Admin\AdminServicesComponent;
 use App\Livewire\Admin\AdminSliderComponent;
+use App\Livewire\ChangeLocationComponent;
 use App\Livewire\ServicesDetailsComponent;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -33,6 +34,9 @@ Route::get('/service/{service_slug}',ServicesDetailsComponent::class)->name('hom
 // Search functionality
 Route::get('/autocomplete', [SearchController::class, 'autocomplete'])->name('autocomplete');
 Route::post('/search', [SearchController::class, 'searchService'])->name('searchService');
+
+
+Route::get('/change-location',ChangeLocationComponent::class)->name('home.change_location');
 
 
 // Customer dashboard
