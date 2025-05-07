@@ -7,12 +7,15 @@ use App\Http\Livewire\ServicesByCategoryComponent;
 use App\Http\Livewire\Sprovider\SproviderDashboardComponent;
 use App\Livewire\Admin\AdminAddServiceCategoryComponent;
 use App\Livewire\Admin\AdminAddServiceComponent;
+use App\Livewire\Admin\AdminAddSlideComponent;
 use App\Livewire\Admin\AdminDashboardComponent;
 use App\Livewire\Admin\AdminEditServiceCategoryComponent;
 use App\Livewire\Admin\AdminEditServiceComponent;
+use App\Livewire\Admin\AdminEditSlideComponent;
 use App\Livewire\Admin\AdminServiceCategoryComponent;
 use App\Livewire\Admin\AdminServicesByCategoryComponent;
 use App\Livewire\Admin\AdminServicesComponent;
+use App\Livewire\Admin\AdminSliderComponent;
 use App\Livewire\ServicesDetailsComponent;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -44,6 +47,10 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () 
     Route::get('/admin/all-service',AdminServicesComponent::class)->name('admin.all_services');
     Route::get('/admin/service/add',AdminAddServiceComponent::class)->name('admin.add_service');
     Route::get('/admin/service/edit/{service_slug}',AdminEditServiceComponent::class)->name('admin.edit_service');
+
+    Route::get('/admin/slider', AdminSliderComponent::class)->name('admin.slider');
+    Route::get('/admin/slider/add', AdminAddSlideComponent::class)->name('admin.add_slide');
+    Route::get('/admin/slider/edit/{slide_id}', AdminEditSlideComponent::class)->name('admin.edit_slide');
 });
 
 // Redirect /dashboard based on user type
